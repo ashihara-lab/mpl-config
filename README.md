@@ -11,9 +11,7 @@
 
 ## インストール
 
-```bash
-pip install matplotlib
-```
+mpl_config.pyをワーキングディレクトリに配置
 
 ## 使用方法
 
