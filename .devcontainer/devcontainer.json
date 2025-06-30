@@ -1,0 +1,27 @@
+{
+    "name": "matplotlib-config-dev",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": ".."
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.pythonPath": "/usr/local/bin/python",
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.terminal.activateEnvironment": false
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.flake8",
+                "ms-python.pylint",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "forwardPorts": [],
+    "postCreateCommand": "pip install --upgrade pip && pip install -r requirements-dev.txt && pip install -e .",
+    "remoteUser": "root"
+} 

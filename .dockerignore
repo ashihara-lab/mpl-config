@@ -1,0 +1,51 @@
+# Git関連
+.git
+.gitignore
+.gitattributes
+
+# DevContainer関連
+.devcontainer
+
+# Python関連
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS関連
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# その他
+*.log
+.env
+.env.local
+.env.*.local 
