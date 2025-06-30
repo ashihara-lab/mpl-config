@@ -96,7 +96,3 @@ mpl-config/
 ├── mpl_config.py          # メインライブラリ（約200行）
 └── README.md
 ```
-
-## ライセンス
-
-MIT License
