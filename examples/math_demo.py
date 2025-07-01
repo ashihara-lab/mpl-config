@@ -21,7 +21,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import mpl_config
 
 # 出力ディレクトリを作成
-os.makedirs('examples/output', exist_ok=True)
+os.makedirs('output', exist_ok=True)
 
 # %% [markdown]
 # ## 1. 数式最適化の前後比較
@@ -61,7 +61,7 @@ ax2.legend()
 ax2.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('examples/output/math_optimization_demo.png', dpi=300)
+plt.savefig('output/math_optimization_demo.png', dpi=300)
 plt.show()
 
 print("数式最適化デモを保存しました: examples/output/math_optimization_demo.png")
@@ -99,7 +99,7 @@ ax.set_title('Complex Mathematical Expressions\n' +
              fontsize=16, pad=20)
 
 plt.tight_layout()
-plt.savefig('examples/output/complex_equations_demo.png', dpi=300)
+plt.savefig('output/complex_equations_demo.png', dpi=300)
 plt.show()
 
 print("複雑な数式デモを保存しました: examples/output/complex_equations_demo.png")
@@ -136,7 +136,7 @@ plt.text(0.7, 0.7, r'$\gamma = 0.1$ s$^{-1}$', transform=plt.gca().transAxes,
          bbox=dict(boxstyle="round,pad=0.3", facecolor="wheat", alpha=0.7))
 
 plt.tight_layout()
-plt.savefig('examples/output/physics_equation_demo.png', dpi=300)
+plt.savefig('output/physics_equation_demo.png', dpi=300)
 plt.show()
 
 print("物理数式デモを保存しました: examples/output/physics_equation_demo.png")
@@ -168,7 +168,7 @@ plt.text(0.05, 0.6, r'$\int_{-\infty}^{\infty} f(x) dx = 1$', transform=plt.gca(
 
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('examples/output/statistics_demo.png', dpi=300)
+plt.savefig('output/statistics_demo.png', dpi=300)
 plt.show()
 
 print("統計数式デモを保存しました: examples/output/statistics_demo.png")
@@ -184,7 +184,7 @@ print("- 全体的に読みやすい数式表示になりました")
 print("- 論文やプレゼンテーションでの数式品質が向上しました")
 print("")
 print("生成されたファイル:")
-print("- examples/output/math_optimization_demo.png")
-print("- examples/output/complex_equations_demo.png") 
-print("- examples/output/physics_equation_demo.png")
-print("- examples/output/statistics_demo.png") 
+print("- output/math_optimization_demo.png")
+print("- output/complex_equations_demo.png") 
+print("- output/physics_equation_demo.png")
+print("- output/statistics_demo.png") 

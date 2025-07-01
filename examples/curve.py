@@ -22,7 +22,7 @@ import mpl_config  # noqa: E402
 
 # %% セットアップ
 # 出力ディレクトリを作成
-os.makedirs('examples/output', exist_ok=True)
+os.makedirs('output', exist_ok=True)
 
 # %% サンプルデータの生成
 # 減衰振動のサンプルデータ
@@ -62,10 +62,10 @@ ax.set_xlim(0, 10)
 ax.set_ylim(-0.8, 0.8)
 
 plt.tight_layout()
-plt.savefig('examples/output/curve_paper.png', dpi=plt.rcParams['savefig.dpi'])
+plt.savefig('output/curve_paper.png', dpi=plt.rcParams['savefig.dpi'])
 plt.show()
 
-print("Paper preset グラフを保存しました: examples/output/curve_paper.png")
+print("Paper preset グラフを保存しました: output/curve_paper.png")
 
 # %% [markdown]
 # ## 2. Presentation プリセット
@@ -92,11 +92,11 @@ ax.set_xlim(0, 10)
 ax.set_ylim(-0.8, 0.8)
 
 plt.tight_layout()
-plt.savefig('examples/output/curve_presentation.png', 
+plt.savefig('output/curve_presentation.png', 
             dpi=plt.rcParams['savefig.dpi'])
 plt.show()
 
-print("Presentation preset グラフを保存しました: examples/output/curve_presentation.png")
+print("Presentation preset グラフを保存しました: output/curve_presentation.png")
 
 # %% [markdown]
 # ## 2. Presentation_large プリセット
@@ -123,11 +123,11 @@ ax.set_xlim(0, 10)
 ax.set_ylim(-0.8, 0.8)
 
 plt.tight_layout()
-plt.savefig('examples/output/curve_presentation_large.png', 
+plt.savefig('output/curve_presentation_large.png', 
             dpi=plt.rcParams['savefig.dpi'])
 plt.show()
 
-print("Presentation_large preset グラフを保存しました: examples/output/curve_presentation_large.png")
+print("Presentation_large preset グラフを保存しました: output/curve_presentation_large.png")
 
 # %% [markdown]
 # ## 5. より複雑な曲線例
@@ -153,7 +153,7 @@ plt.legend()
 plt.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('examples/output/curve_complex.png', dpi=300)
+plt.savefig('output/curve_complex.png', dpi=300)
 plt.show()
 
-print("複雑な曲線例を保存しました: examples/output/curve_complex.png") 
+print("複雑な曲線例を保存しました: output/curve_complex.png") 

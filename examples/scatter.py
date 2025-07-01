@@ -21,7 +21,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import mpl_config
 
 # 出力ディレクトリを作成
-os.makedirs('examples/output', exist_ok=True)
+os.makedirs('output', exist_ok=True)
 
 figsize = (10, 8)
 
@@ -97,10 +97,10 @@ ax4.set_title('Scatter Plot with Error Bars')
 ax4.grid(True, alpha=plt.rcParams['grid.alpha'])
 
 plt.tight_layout()
-plt.savefig('examples/output/scatter_paper.png', dpi=plt.rcParams['savefig.dpi'])
+plt.savefig('output/scatter_paper.png', dpi=plt.rcParams['savefig.dpi'])
 plt.show()
 
-print("Paper preset 散布図を保存しました: examples/output/scatter_paper.png")
+print("Paper preset 散布図を保存しました: output/scatter_paper.png")
 
 # %% [markdown]
 # ## 2. Presentation プリセット
@@ -141,53 +141,11 @@ ax4.set_title('Scatter Plot with Error Bars')
 ax4.grid(True, alpha=plt.rcParams['grid.alpha'])
 
 plt.tight_layout()
-plt.savefig('examples/output/scatter_presentation.png', dpi=plt.rcParams['savefig.dpi'])
+plt.savefig('output/scatter_presentation.png', dpi=plt.rcParams['savefig.dpi'])
 plt.show()
 
-print("Presentation preset 散布図を保存しました: examples/output/scatter_presentation.png")
+print("Presentation preset 散布図を保存しました: output/scatter_presentation.png")
 
-# %% [markdown]
-# ## 3. Default プリセット
-
-# %% Default プリセットでの散布図
-mpl_config.apply_style('default')
-
-fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=figsize)
-
-ax1.scatter(cluster1_x, cluster1_y, alpha=0.7, label='Cluster 1', s=50)
-ax1.scatter(cluster2_x, cluster2_y, alpha=0.7, label='Cluster 2', s=50)
-ax1.scatter(cluster3_x, cluster3_y, alpha=0.7, label='Cluster 3', s=50)
-ax1.set_xlabel('X Coordinate')
-ax1.set_ylabel('Y Coordinate')
-ax1.set_title('Cluster Analysis')
-ax1.legend()
-ax1.grid(True, alpha=plt.rcParams['grid.alpha'])
-
-ax2.scatter(x_corr, y_corr, alpha=0.6, s=30, color='red')
-ax2.plot(x_line, p(x_line), "r--", alpha=0.8, linewidth=2)
-ax2.set_xlabel('Variable X')
-ax2.set_ylabel('Variable Y')
-ax2.set_title('Correlation (r≈0.8)')
-ax2.grid(True, alpha=plt.rcParams['grid.alpha'])
-
-ax3.scatter(cluster1_x, cluster1_y, s=sizes, alpha=0.6, c=sizes, cmap='viridis')
-ax3.set_xlabel('X Coordinate')
-ax3.set_ylabel('Y Coordinate')
-ax3.set_title('Variable Size Scatter Plot')
-ax3.grid(True, alpha=plt.rcParams['grid.alpha'])
-
-ax4.errorbar(x_err, y_err, xerr=xerr, yerr=yerr, 
-             fmt='o', markersize=6, capsize=5, alpha=0.8)
-ax4.set_xlabel('Measured X')
-ax4.set_ylabel('Measured Y')
-ax4.set_title('Scatter Plot with Error Bars')
-ax4.grid(True, alpha=plt.rcParams['grid.alpha'])
-
-plt.tight_layout()
-plt.savefig('examples/output/scatter_default.png', dpi=plt.rcParams['savefig.dpi'])
-plt.show()
-
-print("Default preset 散布図を保存しました: examples/output/scatter_default.png")
 
 # %% [markdown]
 # ## 5. カスタマイズ例
@@ -211,8 +169,8 @@ ax.set_title('Customization Example (Paper-based)')
 ax.grid(True, alpha=plt.rcParams['grid.alpha'])
 
 plt.tight_layout()
-plt.savefig('examples/output/scatter_custom.png', 
+plt.savefig('output/scatter_custom.png', 
             dpi=plt.rcParams['savefig.dpi'])
 plt.show()
 
-print("カスタマイズ例を保存しました: examples/output/scatter_custom.png")
+print("カスタマイズ例を保存しました: output/scatter_custom.png")
