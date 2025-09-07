@@ -33,8 +33,8 @@ PRESETS = {
         'figure.figsize': [10, 5.625],  # 16:9比率
         'figure.dpi': 100,
         'savefig.dpi': 300,
-        'axes.linewidth': 2.25,
-        'lines.linewidth': 3.0,
+        'axes.linewidth': 1.8,
+        'lines.linewidth': 2.0,
     },
     
     'presentation_large': {
@@ -45,8 +45,8 @@ PRESETS = {
         'figure.figsize': [10, 5.625],  # 16:9比率
         'figure.dpi': 100,
         'savefig.dpi': 300,
-        'axes.linewidth': 3.0,
-        'lines.linewidth': 4.0,
+        'axes.linewidth': 2.5,
+        'lines.linewidth': 3.0,
     }
 }
 

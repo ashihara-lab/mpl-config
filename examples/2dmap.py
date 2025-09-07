@@ -19,10 +19,6 @@ import mpl_config
 # mpl_configの各プリセットを使った2Dマップの例を示します。
 # コンターマップ、温度分布、相関行列、ベクトル場など。
 
-# %% ライブラリのインポートとセットアップ
-
-# 出力ディレクトリを作成
-os.makedirs('output', exist_ok=True)
 
 # %% サンプルデータの生成
 # 2D ガウシアンデータ
@@ -48,8 +44,7 @@ corr_matrix = np.corrcoef(corr_matrix)
 print("サンプルデータ（2Dガウシアン、温度分布、相関行列）を生成しました")
 
 # %% [markdown]
-# ## 1. Paper プリセット - 複合2Dマップ
-
+# ## 1. Paper プリセット
 # %% Paper プリセットでの2Dマップ
 mpl_config.apply_style('paper')
 
@@ -92,10 +87,7 @@ ax4.set_ylabel('Y Coordinate')
 ax4.set_title('3D Surface Projection')
 
 plt.tight_layout()
-plt.savefig('output/2dmap_paper.png', dpi=plt.rcParams['savefig.dpi'])
 plt.show()
-
-print("Paper preset 2Dマップを保存しました: examples/output/2dmap_paper.png")
 
 # %% [markdown]
 # ## 2. Presentation プリセット
@@ -136,12 +128,7 @@ ax4.set_ylabel('Y Coordinate')
 ax4.set_title('3D Surface Projection')
 
 plt.tight_layout()
-plt.savefig('output/2dmap_presentation.png',
-            dpi=plt.rcParams['savefig.dpi'])
 plt.show()
-
-print("Presentation preset 2Dマップを保存しました: "
-      "examples/output/2dmap_presentation.png")
 
 
 # %% [markdown]
@@ -204,11 +191,7 @@ ax4.set_ylabel('Y Coordinate')
 ax4.set_title('Contour + Scatter Plot')
 
 plt.tight_layout()
-plt.savefig('output/2dmap_advanced.png', 
-            dpi=plt.rcParams['savefig.dpi'])
 plt.show()
-
-print("高度な2Dプロットを保存しました: examples/output/2dmap_advanced.png")
 
 # %% [markdown]
 # ## 6. 一時的スタイル変更のデモ
@@ -244,12 +227,8 @@ with mpl_config.temp_style('paper'):
     fig.colorbar(im, ax=ax2, shrink=0.8)
     
     plt.tight_layout()
-    plt.savefig('output/temp_style_paper.png', 
-                dpi=plt.rcParams['savefig.dpi'])
     plt.show()
 
-print("Paper一時スタイルの図を保存しました: "
-      "examples/output/temp_style_paper.png")
 
 # %% 一時的スタイル変更: Presentation Large スタイル
 # presentation_largeスタイルで同じデータを描画
@@ -273,12 +252,8 @@ with mpl_config.temp_style('presentation_large'):
     fig.colorbar(im, ax=ax2, shrink=0.8)
     
     plt.tight_layout()
-    plt.savefig('output/temp_style_large.png', 
-                dpi=plt.rcParams['savefig.dpi'])
     plt.show()
 
-print("Large一時スタイルの図を保存しました: "
-      "examples/output/temp_style_large.png")
 
 # %% スタイル復帰確認
 # 元のpresentationスタイルに戻っていることを確認
@@ -302,12 +277,7 @@ ax.text(0.7, 0.95, text_content, transform=ax.transAxes,
         bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
 
 plt.tight_layout()
-plt.savefig('output/temp_style_restored.png', 
-            dpi=plt.rcParams['savefig.dpi'])
 plt.show()
-
-print("スタイル復帰確認の図を保存しました: "
-      "output/temp_style_restored.png")
 print(f"現在のスタイル設定 - フォントサイズ: {plt.rcParams['font.size']}, "
       f"線幅: {plt.rcParams['lines.linewidth']}")
 

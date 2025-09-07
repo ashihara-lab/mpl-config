@@ -5,10 +5,9 @@ mpl_configの数式最適化機能の効果を確認
 """
 
 # %% [markdown]
-# # 数式表示改善デモ
+# # 数式表示例
 # 
-# mpl_config の数式最適化機能の効果を確認します。
-# 数式の上付き・下付き文字やスペーシングが改善されます。
+# 数式の上付き・下付き文字の位置を調整します。
 
 # %% ライブラリのインポートとセットアップ
 import sys
@@ -20,56 +19,10 @@ import matplotlib.pyplot as plt
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import mpl_config
 
-# 出力ディレクトリを作成
-os.makedirs('output', exist_ok=True)
-
 # %% [markdown]
-# ## 1. 数式最適化の前後比較
+# ## 1. 数式表示の例
 
-# %% 数式最適化の前後比較
-# 複雑な数式を含むプロット用のデータ
-x = np.linspace(0, 10, 100)
-y1 = np.exp(-x/5) * np.sin(x)
-y2 = x**2 * np.exp(-x/3)
-
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
-
-# 最適化前（デフォルト設定）
-# matplotlibをリセットしてデフォルト状態に
-import matplotlib as mpl
-mpl.rcdefaults()
-
-ax1.plot(x, y1, label=r'$e^{-x/5} \sin(x)$')
-ax1.plot(x, y2, label=r'$x^2 e^{-x/3}$')
-ax1.set_xlabel(r'$x$ (time)')
-ax1.set_ylabel(r'$f(x)$')
-ax1.set_title('Before Math Optimization\n' + 
-              r'$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$')
-ax1.legend()
-ax1.grid(True, alpha=0.3)
-
-# 最適化後
-mpl_config.optimize_math_rendering()
-
-ax2.plot(x, y1, label=r'$e^{-x/5} \sin(x)$')
-ax2.plot(x, y2, label=r'$x^2 e^{-x/3}$')
-ax2.set_xlabel(r'$x$ (time)')
-ax2.set_ylabel(r'$f(x)$')
-ax2.set_title('After Math Optimization\n' + 
-              r'$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$')
-ax2.legend()
-ax2.grid(True, alpha=0.3)
-
-plt.tight_layout()
-plt.savefig('output/math_optimization_demo.png', dpi=300)
-plt.show()
-
-print("数式最適化デモを保存しました: examples/output/math_optimization_demo.png")
-
-# %% [markdown]
-# ## 2. 複雑な数式表示例
-
-# %% 複雑な数式の表示例
+# %%
 mpl_config.apply_style('paper')  # 数式最適化も自動適用
 
 fig, ax = plt.subplots(figsize=(10, 8))
@@ -99,15 +52,13 @@ ax.set_title('Complex Mathematical Expressions\n' +
              fontsize=16, pad=20)
 
 plt.tight_layout()
-plt.savefig('output/complex_equations_demo.png', dpi=300)
+
 plt.show()
 
-print("複雑な数式デモを保存しました: examples/output/complex_equations_demo.png")
-
 # %% [markdown]
-# ## 3. 科学論文でよく使われる数式
+# ## 2. 論文でよく使われる数式
 
-# %% 科学論文の数式例
+# %% 数式例
 mpl_config.apply_style('paper')
 
 # 数式を含む実際のグラフ例
@@ -124,25 +75,21 @@ plt.plot(t, np.exp(-damping * t), 'r--', alpha=0.7, label=r'$e^{-\gamma t}$ (env
 plt.plot(t, -np.exp(-damping * t), 'r--', alpha=0.7)
 
 plt.xlabel(r'Time $t$ (s)')
-plt.ylabel(r'Displacement $y(t)$')
+plt.ylabel(r'$y(t)$')
 plt.title(r'Damped Harmonic Oscillator: $\frac{d^2y}{dt^2} + 2\gamma\frac{dy}{dt} + \omega^2 y = 0$')
 plt.legend()
 plt.grid(True, alpha=0.3)
 
 # パラメータを注釈で追加
-plt.text(0.7, 0.8, r'$\omega = 2$ rad/s', transform=plt.gca().transAxes, 
-         bbox=dict(boxstyle="round,pad=0.3", facecolor="wheat", alpha=0.7))
-plt.text(0.7, 0.7, r'$\gamma = 0.1$ s$^{-1}$', transform=plt.gca().transAxes,
-         bbox=dict(boxstyle="round,pad=0.3", facecolor="wheat", alpha=0.7))
+plt.text(0.5, 0.8, r'$\omega = 2$ rad/s, $\gamma = 0.1$ s$^{-1}$', transform=plt.gca().transAxes, 
+         bbox=dict(boxstyle="round,pad=0.3", facecolor="none", edgecolor="none", alpha=0.7))
+
 
 plt.tight_layout()
-plt.savefig('output/physics_equation_demo.png', dpi=300)
 plt.show()
 
-print("物理数式デモを保存しました: examples/output/physics_equation_demo.png")
-
 # %% [markdown]
-# ## 4. 統計・数学の数式
+# ## 3. 統計・数学の数式
 
 # %% 統計・数学の数式例
 mpl_config.apply_style('presentation')
@@ -168,23 +115,5 @@ plt.text(0.05, 0.6, r'$\int_{-\infty}^{\infty} f(x) dx = 1$', transform=plt.gca(
 
 plt.grid(True, alpha=0.3)
 plt.tight_layout()
-plt.savefig('output/statistics_demo.png', dpi=300)
 plt.show()
 
-print("統計数式デモを保存しました: examples/output/statistics_demo.png")
-
-# %% [markdown]
-# ## まとめ
-
-# %% 改善点の表示
-print("=== 数式表示最適化の改善点 ===")
-print("- 上付き・下付き文字周辺のスペースがより密になりました")
-print("- 数式要素の位置がより自然になりました")
-print("- 全体的に読みやすい数式表示になりました")
-print("- 論文やプレゼンテーションでの数式品質が向上しました")
-print("")
-print("生成されたファイル:")
-print("- output/math_optimization_demo.png")
-print("- output/complex_equations_demo.png") 
-print("- output/physics_equation_demo.png")
-print("- output/statistics_demo.png") 
